@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+img {
+    width: 50%;
+}
