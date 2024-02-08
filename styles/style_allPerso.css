@@ -1,0 +1,26 @@
+h1, h2 {
+    text-align: center;
+}
+
+.retour {
+    margin-left: 10%;
+}
+
+.listPerso {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.perso {
+    border: solid 1px black;
+    display: flex;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.perso img {
+    width: 35%;;
+}

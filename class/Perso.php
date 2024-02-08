@@ -6,6 +6,7 @@
         protected $type_perso;
         protected $pv_perso;
         protected $atk_perso;
+        protected $bonus_perso;
         protected $img_perso;
 
     // Setters 
@@ -27,6 +28,10 @@
 
         public function setAtk_perso ($atk){
             $this->atk_perso = $atk;
+        }
+
+        public function setBonus_perso ($bonus){
+            $this->bonus_perso = $bonus;
         }
 
         public function setImg_perso ($img){
@@ -52,6 +57,10 @@
 
         public function getAtk_perso (){
             return $this->atk_perso;
+        }
+
+        public function getBonus_perso (){
+            return $this->bonus_perso;
         }
 
         public function getImg_perso (){

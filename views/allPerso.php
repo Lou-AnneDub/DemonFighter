@@ -8,53 +8,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Fighter</title>
+    <link rel="stylesheet" href="styles/style_allPerso.css">
+    <title>Liste Personnages - Demon Fighter</title>
 </head>
 <body>
     <h1>Liste des Personnages</h1>
-    <table>
-        <tr>
-            <th>Nom</th>
-            <th>PV</th>
-            <th>ATK</th>
-        </tr>
-        <?php 
-            foreach ($perso as $key => $value) {
-                if ($value['type_perso'] == "Hero") {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($value['nom_perso']) . "</td>"; 
-                    echo "<td>" . htmlspecialchars($value['pv_perso']) . "</td>";  
-                    echo "<td>" . htmlspecialchars($value['atk_perso']) . "</td>"; 
-                    echo "<td><a href='modifyPerso.php?id=" . htmlspecialchars($value['id_perso']) . "'>Modifier</a></td>";
-                    echo "<td><a href='deletePerso.php?id=" . htmlspecialchars($value['id_perso']) . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce personnage ?\")'>Supprimer</a></td>";
-                    echo "</tr>";
-                }
-            }
-        ?>
-    </table>
+    <a href="index.php?page=start" class="bouton retour">Retour</a>
+    <section class="listPerso">
+        <div class="heros">
+            <h2>Héros</h2>
+            <?php
+                foreach ($perso as $key => $value) {
+                    if ($value['type_perso'] == "Hero") {
+                    ?>
+                        <div class="perso">
+                            <img src="img/<?= $value['img_perso'] ?>" alt=""> 
+                            <div>
+                                <h2><?php echo $value['nom_perso'] ?></h2>
+                                <p>Points de vie : <?php echo $value['pv_perso'] ?></p>
+                                <p>Attaque : <?php echo $value['atk_perso'] ?></p>
+                                <p>Bonus : <?php echo $value['bonus_perso'] ?></p>
+                                <div class="bouton">
+                                    <a href="index.php?page=editPerso&id=<?= $value['id_perso'] ?>">Modifier</a>
+                                    <form action="index.php?page=deletePerso" method="POST">
+                                        <input type="hidden" name="id" value="<?= $value['id_perso'] ?>">
+                                        <button type="submit">Supprimer</button>
+                                    </form>
+                                </div>
+                            </div>
 
-    <br>
-    <table>
-        <tr>
-            <th>Nom</th>
-            <th>PV</th>
-            <th>ATK</th>
-        </tr>
-        <?php 
-            foreach ($perso as $key => $value) {
-                if ($value['type_perso'] == "Mechant") {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($value['nom_perso']) . "</td>"; 
-                    echo "<td>" . htmlspecialchars($value['pv_perso']) . "</td>";  
-                    echo "<td>" . htmlspecialchars($value['atk_perso']) . "</td>"; 
-                    echo "<td><a href='modifyPerso.php?id=" . htmlspecialchars($value['id_perso']) . "'>Modifier</a></td>";
-                    echo "<td><a href='deletePerso.php?id=" . htmlspecialchars($value['id_perso']) . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer ce personnage ?\")'>Supprimer</a></td>";
-                    echo "</tr>";
-                }
-            }
-        ?>
+                        </div>
 
-    </table>
+                    <?php
+                    }
+                }
+            ?>
+        </div>
+        <div class="mechants">
+            <h2>Méchants</h2>
+            <?php
+                foreach ($perso as $key => $value) {
+                    if ($value['type_perso'] == "Mechant") {
+                    ?>
+                        <div class="perso">
+                            <img src="img/<?= $value['img_perso'] ?>" alt=""> 
+                            <div>
+                                <h2><?php echo $value['nom_perso'] ?></h2>
+                                <p>Points de vie : <?php echo $value['pv_perso'] ?></p>
+                                <p>Attaque : <?php echo $value['atk_perso'] ?></p>
+                                <div class="bouton">
+                                    <a href="index.php?page=editPerso&id=<?= $value['id_perso'] ?>">Modifier</a>
+                                    <form action="index.php?page=deletePerso" method="POST">
+                                        <input type="hidden" name="id" value="<?= $value['id_perso'] ?>">
+                                        <button type="submit">Supprimer</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    <?php
+                    }
+                }
+            ?>
+        </div>
+    </section>
     
 </body>
 </html>

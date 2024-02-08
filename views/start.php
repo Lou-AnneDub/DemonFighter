@@ -37,5 +37,6 @@
 </body>
 <footer>
     <a href="index.php?page=allPerso" class="bouton liste">Liste des personnages</a>
+    <a href="index.php?page=addPerso" class="bouton ajout">Ajouter un personnage</a>
 </footer>
 </html>
