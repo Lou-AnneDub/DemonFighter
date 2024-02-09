@@ -16,6 +16,11 @@
             break;
 
         case 'fight':
+            //Premier tour par défaut celui du héro 
+            if (!isset($_SESSION['tourCombat'])) {
+                $_SESSION['tourCombat'] = 'hero';
+            }
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $idHero = $_POST['hero'];

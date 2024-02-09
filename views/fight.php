@@ -72,78 +72,77 @@
 ?>
 
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style_fight.css">
-    <title>Demon Fighter</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style_fight.css">
+        <title>Demon Fighter</title>
+    </head>
+    <body>
+        <h1>Combat entre <?php echo $hero->getNom_perso() ?> et <?php echo $mechant->getNom_perso() ?></h1>
 
-<body>
-    <h1>Combat entre <?php echo $hero->getNom_perso() ?> et <?php echo $mechant->getNom_perso() ?></h1>
-
-    <p><?php echo $resultatDuTour; ?></p>
-    
-    <main>
-        <section class="fight">
-            <div class="perso">
-                <img src="img/<?= $hero->getImg_perso() ?>" alt=""> 
-                <h2><?php echo $hero->getNom_perso() ?></h2>
-                <p>Points de vie : <?php echo $_SESSION['pvHero']; ?></p>
-                <p>Attaque : <?php echo $hero->getAtk_perso() ?></p>
-                <div class="barreVie">
-                    <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvHero']/$hero->getPv_perso())*100)) ?>%;"></div>
+        <p><?php echo $resultatDuTour; ?></p>
+        
+        <main>
+            <section class="fight">
+                <div class="perso">
+                    <img src="img/<?= $hero->getImg_perso() ?>" alt=""> 
+                    <h2><?php echo $hero->getNom_perso() ?></h2>
+                    <p>Points de vie : <?php echo $_SESSION['pvHero']; ?></p>
+                    <p>Attaque : <?php echo $hero->getAtk_perso() ?></p>
+                    <div class="barreVie">
+                        <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvHero']/$hero->getPv_perso())*100)) ?>%;"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="perso">
-                <img src="img/<?= $mechant->getImg_perso() ?>" alt=""> 
-                <h2><?php echo $mechant->getNom_perso() ?></h2>
-                <p>Points de vie : <?php echo $_SESSION['pvMechant']; ?></p>
-                <p>Attaque : <?php echo $mechant->getAtk_perso() ?></p>
-                <div class="barreVie">
-                    <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvMechant']/$mechant->getPv_perso())*100)) ?>%;"></div>
+                <div class="perso">
+                    <img src="img/<?= $mechant->getImg_perso() ?>" alt=""> 
+                    <h2><?php echo $mechant->getNom_perso() ?></h2>
+                    <p>Points de vie : <?php echo $_SESSION['pvMechant']; ?></p>
+                    <p>Attaque : <?php echo $mechant->getAtk_perso() ?></p>
+                    <div class="barreVie">
+                        <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvMechant']/$mechant->getPv_perso())*100)) ?>%;"></div>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section>
-            <form action="index.php?page=fight" method="post">
-                <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
-                <input type="hidden" name="mechant" value="<?php echo $idMechant; ?>">
-                <input type="hidden" name="joueurActuel" value="<?php echo (isset($_POST['joueurActuel']) && $_POST['joueurActuel'] === "hero") ? "hero" : "mechant"; ?>">
-                <input type="submit" name="tourCombat" value="Attaque">
-            </form>  
+            </section>
+            <section>
+                <form action="index.php?page=fight" method="post">
+                    <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
+                    <input type="hidden" name="mechant" value="<?php echo $idMechant; ?>">
+                    <input type="hidden" name="joueurActuel" value="<?php echo (isset($_POST['joueurActuel']) && $_POST['joueurActuel'] === "hero") ? "hero" : "mechant"; ?>">
+                    <input type="submit" name="tourCombat" value="Attaque">
+                </form>  
 
-            <!-- Afficher le bouton Soigner seulement si c'est le tour du héros -->
-            <?php if ($_SESSION['tourCombat'] === 'hero'): ?>
-                
-                <form action="index.php?page=fight" method="post">
-                    <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
-                    <input type="hidden" name="mechant" value="<?php echo $idMechant; ?>">
-                    <input type="submit" name="tourCombat" value="Soigner">
-                </form>
-            <?php endif; ?>
-            <!-- Afficher le bouton Bonus seulement si c'est le tour du héros -->
-            <?php if ($_SESSION['tourCombat'] === 'hero'): ?>
-                <form action="index.php?page=fight" method="post">
-                    <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
-                    <input type="hidden" name="mechant" value="<?php echo $idMechant; ?>">
-                    <input type="submit" name="tourCombat" value="BonusAtk">
-                </form>
-            <?php endif; ?>
-            <!-- Afficher le bouton Bonus seulement si c'est le tour du héros et si le hero a moins de 15pv et si le bonus de soin n'a pas encore été utilisé -->
-            <?php if ($_SESSION['tourCombat'] === 'hero' && $_SESSION['pvHero'] <= 15): ?>
-                <form action="index.php?page=fight" method="post">
-                    <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
-                    <input type="hidden" name="mechant" value="<?php echo $idMechant; ?>">
-                    <input type="submit" name="tourCombat" value="BonusSoin">
-                </form>
-            <?php endif; ?>
-        </section>
+                <!-- Afficher le bouton Soigner seulement si c'est le tour du héros -->
+                <?php if ($_SESSION['tourCombat'] === 'hero'): ?>
+                    
+                    <form action="index.php?page=fight" method="post">
+                        <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
+                        <input type="hidden" name="mechant" value="<?php echo $idMechant; ?>">
+                        <input type="submit" name="tourCombat" value="Soigner">
+                    </form>
+                <?php endif; ?>
+                <!-- Afficher le bouton Bonus seulement si c'est le tour du héros -->
+                <?php if ($_SESSION['tourCombat'] === 'hero'): ?>
+                    <form action="index.php?page=fight" method="post">
+                        <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
+                        <input type="hidden" name="mechant" value="<?php echo $idMechant; ?>">
+                        <input type="submit" name="tourCombat" value="BonusAtk">
+                    </form>
+                <?php endif; ?>
+                <!-- Afficher le bouton Bonus seulement si c'est le tour du héros et si le hero a moins de 15pv et si le bonus de soin n'a pas encore été utilisé -->
+                <?php if ($_SESSION['tourCombat'] === 'hero' && $_SESSION['pvHero'] <= 15): ?>
+                    <form action="index.php?page=fight" method="post">
+                        <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
+                        <input type="hidden" name="mechant" value="<?php echo $idMechant; ?>">
+                        <input type="submit" name="tourCombat" value="BonusSoin">
+                    </form>
+                <?php endif; ?>
+            </section>
 
-    </main>
-    
-    
-</body>
+        </main>
+        
+        
+    </body>
 
 <script>
     setInterval(function() {
