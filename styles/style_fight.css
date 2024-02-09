@@ -4,14 +4,31 @@ h1 {
     margin-bottom: 5px;
 }
 
-main {
+.fight {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    width: 80%;
+    margin: auto;
+}
+
+.perso {
+    width: 50%;
 }
 
 img {
     width: 50%;
+}
+
+.barreVie {
+    background-color: #ccc;
+    height: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.vie {
+height: 100%;
+background-color: green;
 }

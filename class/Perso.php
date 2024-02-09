@@ -87,13 +87,4 @@
             $perso->setPV($perso->pv_perso -= $this->atk_perso); 
         }
 
-        public function is_alive(){
-            if($this->pv_perso <= 0){
-                return false;
-            }else{
-                return  true;
-            }  
-        }  
-
-
     }
