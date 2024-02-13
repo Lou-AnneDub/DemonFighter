@@ -90,7 +90,7 @@
                     <h2><?php echo $hero->getNom_perso() ?></h2>
                     <p>Points de vie : <?php echo $_SESSION['pvHero']; ?></p>
                     <p>Attaque : <?php echo $hero->getAtk_perso() ?></p>
-                    <div class="barreVie">
+                    <div class="barreVie <?php echo ($tourActuel === 'hero') ? '' : 'tour'; ?> ">
                         <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvHero']/$hero->getPv_perso())*100)) ?>%;"></div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                     <h2><?php echo $mechant->getNom_perso() ?></h2>
                     <p>Points de vie : <?php echo $_SESSION['pvMechant']; ?></p>
                     <p>Attaque : <?php echo $mechant->getAtk_perso() ?></p>
-                    <div class="barreVie">
+                    <div class="barreVie <?php echo ($tourActuel === 'mechant') ? '' : 'tour'; ?>">
                         <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvMechant']/$mechant->getPv_perso())*100)) ?>%;"></div>
                     </div>
                 </div>

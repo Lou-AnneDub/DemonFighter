@@ -22,6 +22,7 @@
                 }
             ?>
         </select>
+        <input type="submit" value="Play !">
         <select name="mechant" id="mechant">
         <?php
                 foreach ($perso as $key => $value) {
@@ -31,7 +32,6 @@
                 }
             ?>
         </select>
-        <input type="submit" value="Fight !">
     </form>
     
 </body>
