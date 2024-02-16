@@ -29,7 +29,9 @@ h1 {
 /* ---- Form ---- */
 form {
     margin-bottom: 5%;
+    height: 40vh;
 }
+
 form div {
     display: flex;
     justify-content: center;
@@ -44,7 +46,44 @@ h2 {
     font-size: 4em;
 }
 
-a {
+select {
+    font-family: 'go3v2';
     color: #fff;
+    border: 2.5px solid #fff;
+    border-radius: 7px;
+    padding: 7px 25px;
+    font-size: 1.3rem;
+    background-color: #00000023;
+    text-align: center;
+    width: 20%;
+}
+
+input[type="submit"] {
+    font-family: 'go3v2';
+    color: #fff;
+
+    background-color: #8f54b4;
+    border: 2.5px solid #fff;
+    border-radius: 7px;
+    padding: 7px 25px;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+
+/* ---- Section "footer" ---- */
+section {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 5%;
+}
+section a {
+    font-family: 'go3v2';
+    color: #fff;
+    font-size: 1.3rem;
     text-decoration: none;
+    border: 2.5px solid #fff;
+    border-radius: 5px;
+    padding: 3px 5px;
 }

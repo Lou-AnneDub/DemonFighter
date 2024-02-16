@@ -111,6 +111,11 @@ h3 {
     border: solid 1px #804596;
 }
 
+.button button:hover {
+    background-color: #6e0a0a;
+    border: solid 1px #a12d2d;
+}
+
 .mechants .button {
     position: relative;
     bottom: -15%;

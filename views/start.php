@@ -1,6 +1,5 @@
 <?php 
     $perso = $monManager->getAllPerso();
-
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +14,13 @@
     <h1 id="h4">Choisi tes combattants !</h1>
     <form action="index.php?page=fight" method="POST">
         <div>
+
+            <img id="heroImage" src="" alt="">
             <select name="hero" id="hero">
                 <?php
                     foreach ($perso as $key => $value) {
                         if ($value['type_perso'] == "Hero") {
-                            echo "<option value='" . htmlspecialchars($value['id_perso']) . "'>" . htmlspecialchars($value['nom_perso']) . "</option>";
+                            echo "<option value='" . htmlspecialchars($value['id_perso']) . "' data-img='" . htmlspecialchars($value['img_perso']) . "'>" . htmlspecialchars($value['nom_perso']) . "</option>";
                         }
                     }
                 ?>
@@ -37,10 +38,12 @@
         </div>
         <input type="submit" value="Play !">
     </form>
-    
+
+    <section>
+        <a href="index.php?page=allPerso" class="bouton liste">Liste des personnages</a>
+        <a href="index.php?page=addPerso" class="bouton ajout">Ajouter un personnage</a>
+    </section>  
 </body>
-<footer>
-    <a href="index.php?page=allPerso" class="bouton liste">Liste des personnages</a>
-    <a href="index.php?page=addPerso" class="bouton ajout">Ajouter un personnage</a>
-</footer>
+
+
 </html>
