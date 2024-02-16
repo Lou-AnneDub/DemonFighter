@@ -79,29 +79,28 @@
         <title>Demon Fighter</title>
     </head>
     <body>
-        <h1>Combat entre <?php echo $hero->getNom_perso() ?> et <?php echo $mechant->getNom_perso() ?></h1>
+        <h1><?php echo $hero->getNom_perso() ?> <span>VS</span> <?php echo $mechant->getNom_perso() ?></h1>
 
         <p><?php echo $resultatDuTour; ?></p>
         
         <main>
             <section class="fight">
-                <div class="perso">
-                    <img src="img/<?= $hero->getImg_perso() ?>" alt=""> 
+                <div class="perso hero">
                     <h2><?php echo $hero->getNom_perso() ?></h2>
-                    <p>Points de vie : <?php echo $_SESSION['pvHero']; ?></p>
-                    <p>Attaque : <?php echo $hero->getAtk_perso() ?></p>
+                    <p><?php echo $_SESSION['pvHero']; ?></p>
                     <div class="barreVie <?php echo ($tourActuel === 'hero') ? '' : 'tour'; ?> ">
                         <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvHero']/$hero->getPv_perso())*100)) ?>%;"></div>
                     </div>
+                    <img src="img/<?= $hero->getImg_perso() ?>" alt=""> 
                 </div>
-                <div class="perso">
-                    <img src="img/<?= $mechant->getImg_perso() ?>" alt=""> 
+                <div class="perso mechant">
+                    
                     <h2><?php echo $mechant->getNom_perso() ?></h2>
-                    <p>Points de vie : <?php echo $_SESSION['pvMechant']; ?></p>
-                    <p>Attaque : <?php echo $mechant->getAtk_perso() ?></p>
+                    <p><?php echo $_SESSION['pvMechant']; ?></p>
                     <div class="barreVie <?php echo ($tourActuel === 'mechant') ? '' : 'tour'; ?>">
                         <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvMechant']/$mechant->getPv_perso())*100)) ?>%;"></div>
                     </div>
+                    <img src="img/<?= $mechant->getImg_perso() ?>" alt=""> 
                 </div>
             </section>
             <section>

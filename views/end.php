@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style_end.css">
     <title>Fin du Combat - Demon Fighter</title>
 </head>
 <body>
-    <a href="index.php?page=start" class="bouton retour">Retour</a>
+    
     <?php
         // Vérifiez si la variable $gagnant est définie
         if (isset($gagnant)) {
@@ -23,6 +24,8 @@
             echo "Erreur : Aucun gagnant n'est défini.";
         }
     ?>
+
+    <a href="index.php?page=start" class="restart">Nouvelle Partie !</a>
 
     <?php
         // Réinitialisez la session après la fin du combat

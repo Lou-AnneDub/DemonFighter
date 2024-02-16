@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'go3v2';
+    src: url('../fonts/go3v2.woff2') format('woff2'),
+        url('../fonts/go3v2.woff') format('woff'),
+        url('../fonts/go3v2.otf') format('opentype'),
+        url('../fonts/go3v2.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url("../img/backgroundFight2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+}
+
+
+h1 {
+    font-family: 'go3v2';
+    -webkit-text-stroke: #f4f4f4 0.25px;
+    color: #000;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3%;
+}
+
+img {
+    width: 37%;
+    margin-bottom: 3%;
+}
+
+.restart {
+    font-family: 'go3v2';
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 2.5px solid #fff;
+    border-radius: 5px;
+    padding: 3px 5px;
+}

@@ -15,7 +15,6 @@
     <form action="index.php?page=fight" method="POST">
         <div>
 
-            <img id="heroImage" src="" alt="">
             <select name="hero" id="hero">
                 <?php
                     foreach ($perso as $key => $value) {
