@@ -52,7 +52,7 @@
                 $success = $monManager->deletePerso($idToDelete);
         
                 if ($success) {
-                    echo "Personnage supprimé avec succès.";
+                    header('Location: index.php?page=allPerso');
                 } else {
                     echo "Erreur lors de la suppression du personnage.";
                 }
@@ -67,7 +67,7 @@
                 $success = $monManager->addPerso($newPerso);
         
                 if ($success) {
-                    echo "Personnage ajouté avec succès.";
+                    header('Location: index.php?page=allPerso');
                 } else {
                     echo "Erreur lors de l'ajout du personnage.";
                 }

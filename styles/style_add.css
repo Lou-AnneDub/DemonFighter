@@ -15,7 +15,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     text-align: center;
-    margin-top: 5%;
+    margin-top: 4%;
 }
 
 h1 { 
@@ -23,6 +23,7 @@ h1 {
     -webkit-text-stroke: #fff 0.25px;
     color: #000;
     font-size: 4em;
+    margin-bottom: 2%;
 }
 
 .retour {
@@ -38,6 +39,8 @@ h1 {
     padding: 3px 5px;
 }
 
+/* ---- Form add ---- */
+
 form {
     border: solid 2px #fff;
     border-radius: 10px;
@@ -52,12 +55,24 @@ form {
     
     width: 40%;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 2%;
     padding: 20px;
 }
 
 form input, form select {
     margin-bottom: 10px;
+    background-color: #0000001e;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 5px 7px;
+    width: 35%;
+
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+form select {
+    width: 39%
 }
 
 label {
@@ -72,6 +87,9 @@ input[type="submit"] {
     padding: 5px 7px;
     font-size: 0.9rem;
     font-family: Arial, Helvetica, sans-serif;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 
     border: solid 1px #be84d3;
     background-color: #8f55a2;
@@ -80,4 +98,44 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #491c58;
     border: solid 1px #804596;
+}
+
+
+/* ---- Form edit ---- */
+
+#edit {
+    display: flex;
+    flex-direction: row;
+}
+
+#edit .img {
+    width: 47%;
+}
+
+#edit .img img {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+#edit .info {
+    width: 53%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    align-items: center;
+}
+
+#edit .info input {
+    width: 63%;
+}
+
+#edit .info select {
+    width: 69%;
+}
+
+#edit .info input[type="submit"] {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }

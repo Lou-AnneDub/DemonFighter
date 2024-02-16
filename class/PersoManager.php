@@ -7,13 +7,14 @@
         }
 
         public function addPerso(Perso $perso) :bool {
-            $query = "INSERT INTO Perso (nom_perso, type_perso, pv_perso, atk_perso, img_perso) VALUES (:nom_perso, :type_perso, :pv_perso, :atk_perso, :img_perso)";
+            $query = "INSERT INTO Perso (nom_perso, type_perso, pv_perso, atk_perso, img_perso, bonus_perso) VALUES (:nom_perso, :type_perso, :pv_perso, :atk_perso, :img_perso, :bonus_perso)";
             $result = $this->db->prepare($query);
             $result->bindValue(':nom_perso', $perso->getNom_perso(), PDO::PARAM_STR);
             $result->bindValue(':type_perso', $perso->getType_perso(), PDO::PARAM_STR);
             $result->bindValue(':pv_perso', $perso->getPV_perso(), PDO::PARAM_INT);
             $result->bindValue(':atk_perso', $perso->getATK_perso(), PDO::PARAM_INT);
             $result->bindValue(':img_perso', $perso->getImg_perso(), PDO::PARAM_STR);
+            $result->bindValue(':bonus_perso', $perso->getBonus_perso(), PDO::PARAM_INT);
         
             return $result->execute();
         }
@@ -34,13 +35,14 @@
         }
 
         public function modifyPerso(Perso $newPerso) : bool {
-            $query = "UPDATE Perso SET nom_perso = :nom_perso, type_perso = :type_perso, pv_perso = :pv_perso, atk_perso = :atk_perso WHERE id_perso = :id_perso";
+            $query = "UPDATE Perso SET nom_perso = :nom_perso, type_perso = :type_perso, pv_perso = :pv_perso, atk_perso = :atk_perso, bonus_perso = :bonus_perso WHERE id_perso = :id_perso";
             $result = $this->db->prepare($query);
     
             $result->bindValue(':nom_perso', $newPerso->getNom_perso(), PDO::PARAM_STR);
             $result->bindValue(':type_perso', $newPerso->getType_perso(), PDO::PARAM_STR);
             $result->bindValue(':pv_perso', $newPerso->getPV_perso(), PDO::PARAM_INT);
             $result->bindValue(':atk_perso', $newPerso->getATK_perso(), PDO::PARAM_INT);
+            $result->bindValue(':bonus_perso', $newPerso->getBonus_perso(), PDO::PARAM_INT);
             $result->bindValue(':id_perso', $newPerso->getId_perso(), PDO::PARAM_INT);
     
             return $result->execute();
