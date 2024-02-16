@@ -14,27 +14,21 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-
-}
-
-h1, h2 {
-    font-family: 'go3v2';
-    -webkit-text-stroke: #f4f4f4 0.25px;
-    color: #000;
     text-align: center;
+    margin-top: 5%;
 }
 
-    h1 { 
-        font-size: 4em;
-        margin-bottom: 15px;
-    }
-
-    h2 {
-        font-size: 2.5em;
-    }
+h1 { 
+    font-family: 'go3v2';
+    -webkit-text-stroke: #fff 0.25px;
+    color: #000;
+    font-size: 4em;
+}
 
 .retour {
-    margin-left: 10%;
+    position: relative;
+    left: -30%;
+
     font-family: 'go3v2';
     color: #fff;
     font-size: 1.5rem;
@@ -44,72 +38,46 @@ h1, h2 {
     padding: 3px 5px;
 }
 
-/* ---- Cards ---- */
-
-.listPerso {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.perso {
+form {
     border: solid 2px #fff;
     border-radius: 10px;
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
-    
-    display: grid;
-    grid-template-columns: 40% 1fr;
-    margin-bottom: 15px;
-    padding: 10px;
     color: #fff;
-}
 
-h3 {
-    font-size: 1.5em;
-}
-
-.perso img {
-    width: 100%;
-}
-
-.perso .text {
-    height: 100%;
-}
-
-.button {
     display: flex;
-    gap: 15px;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    
+    width: 40%;
+    margin: auto;
+    margin-top: 3%;
+    padding: 20px;
 }
 
-.button a, .button button{
+form input, form select {
+    margin-bottom: 10px;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+
+input[type="submit"] {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     padding: 5px 7px;
     font-size: 0.9rem;
     font-family: Arial, Helvetica, sans-serif;
-}
 
-.button a {
     border: solid 1px #be84d3;
     background-color: #8f55a2;
 }
 
-.button button {
-    background-color: #b00606;
-    border: solid 1px #d34141;
-}
-
-.button a:hover {
+input[type="submit"]:hover {
     background-color: #491c58;
     border: solid 1px #804596;
-}
-
-.mechants .button {
-    position: relative;
-    bottom: -15%;
 }

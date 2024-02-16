@@ -8,30 +8,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style_start.css">
     <title>Demon Fighter</title>
 </head>
 <body>
-    <h1>Choisi tes joueurs !</h1>
+    <h1 id="h4">Choisi tes combattants !</h1>
     <form action="index.php?page=fight" method="POST">
-        <select name="hero" id="hero">
+        <div>
+            <select name="hero" id="hero">
+                <?php
+                    foreach ($perso as $key => $value) {
+                        if ($value['type_perso'] == "Hero") {
+                            echo "<option value='" . htmlspecialchars($value['id_perso']) . "'>" . htmlspecialchars($value['nom_perso']) . "</option>";
+                        }
+                    }
+                ?>
+            </select>
+            <h2>VS</h2>
+            <select name="mechant" id="mechant">
             <?php
-                foreach ($perso as $key => $value) {
-                    if ($value['type_perso'] == "Hero") {
-                        echo "<option value='" . htmlspecialchars($value['id_perso']) . "'>" . htmlspecialchars($value['nom_perso']) . "</option>";
+                    foreach ($perso as $key => $value) {
+                        if ($value['type_perso'] == "Mechant") {
+                            echo "<option value='" . htmlspecialchars($value['id_perso']) . "'>" . htmlspecialchars($value['nom_perso']) . "</option>";
+                        }
                     }
-                }
-            ?>
-        </select>
+                ?>
+            </select>
+        </div>
         <input type="submit" value="Play !">
-        <select name="mechant" id="mechant">
-        <?php
-                foreach ($perso as $key => $value) {
-                    if ($value['type_perso'] == "Mechant") {
-                        echo "<option value='" . htmlspecialchars($value['id_perso']) . "'>" . htmlspecialchars($value['nom_perso']) . "</option>";
-                    }
-                }
-            ?>
-        </select>
     </form>
     
 </body>

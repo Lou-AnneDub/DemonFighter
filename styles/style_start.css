@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'go3v2';
+    src: url('../fonts/go3v2.woff2') format('woff2'),
+        url('../fonts/go3v2.woff') format('woff'),
+        url('../fonts/go3v2.otf') format('opentype'),
+        url('../fonts/go3v2.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+    margin-top: 9%;
+}
+
+h1 { 
+    font-family: 'go3v2';
+    -webkit-text-stroke: #fff 0.25px;
+    color: #000;
+    font-size: 4em;
+}
+
+
+/* ---- Form ---- */
+form {
+    margin-bottom: 5%;
+}
+form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+}
+
+h2 {
+    font-family: 'go3v2';
+    -webkit-text-stroke: #fff 0.25px;
+    color: #000;
+    font-size: 4em;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}

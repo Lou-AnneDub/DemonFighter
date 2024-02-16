@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Liste des Personnages</h1>
-    <a href="index.php?page=start" class="bouton retour">Retour</a>
+    <a href="index.php?page=start" class="retour">«- Retour</a>
     <section class="listPerso">
         <div class="heros">
             <h2>Héros</h2>
@@ -24,11 +24,11 @@
                         <div class="perso">
                             <img src="img/<?= $value['img_perso'] ?>" alt=""> 
                             <div>
-                                <h2><?php echo $value['nom_perso'] ?></h2>
+                                <h3><?php echo $value['nom_perso'] ?></h3>
                                 <p>Points de vie : <?php echo $value['pv_perso'] ?></p>
                                 <p>Attaque : <?php echo $value['atk_perso'] ?></p>
                                 <p>Bonus : <?php echo $value['bonus_perso'] ?></p>
-                                <div class="bouton">
+                                <div class="button">
                                     <a href="index.php?page=editPerso&id=<?= $value['id_perso'] ?>">Modifier</a>
                                     <form action="index.php?page=deletePerso" method="POST">
                                         <input type="hidden" name="id" value="<?= $value['id_perso'] ?>">
@@ -52,19 +52,20 @@
                     ?>
                         <div class="perso">
                             <img src="img/<?= $value['img_perso'] ?>" alt=""> 
-                            <div>
-                                <h2><?php echo $value['nom_perso'] ?></h2>
+                            <div class="text">
+                                <h3><?php echo $value['nom_perso'] ?></h3>
                                 <p>Points de vie : <?php echo $value['pv_perso'] ?></p>
                                 <p>Attaque : <?php echo $value['atk_perso'] ?></p>
-                                <div class="bouton">
+                                <div class="button">
                                     <a href="index.php?page=editPerso&id=<?= $value['id_perso'] ?>">Modifier</a>
                                     <form action="index.php?page=deletePerso" method="POST">
                                         <input type="hidden" name="id" value="<?= $value['id_perso'] ?>">
                                         <button type="submit">Supprimer</button>
                                     </form>
                                 </div>
+                                
                             </div>
-
+                            
                         </div>
 
                     <?php
