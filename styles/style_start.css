@@ -28,7 +28,7 @@ h1 {
 
 /* ---- Form ---- */
 form {
-    margin-bottom: 5%;
+    margin-top: 7%;
     height: 40vh;
 }
 
@@ -76,7 +76,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 5%;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 section a {
     font-family: 'go3v2';

@@ -80,7 +80,7 @@
                 <div class="perso hero">
                     <h2><?php echo $hero->getNom_perso() ?></h2>
                     <p><?php echo $_SESSION['pvHero']; ?></p>
-                    <div class="border <?php echo ($tourActuel === 'hero') ? 'tour' : ''; ?>"><div class="barreVie">
+                    <div class="border <?php echo ($tourActuel === 'hero') ? '' : 'tour'; ?>"><div class="barreVie">
                         <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvHero']/$hero->getPv_perso())*100)) ?>%;"></div>
                     </div></div>
                     <img src="img/<?= $hero->getImg_perso() ?>" alt=""> 
@@ -122,7 +122,7 @@
                     
                     <h2><?php echo $mechant->getNom_perso() ?></h2>
                     <p><?php echo $_SESSION['pvMechant']; ?></p>
-                    <div class="border <?php echo ($tourActuel === 'mechant') ? 'tour' : ''; ?> "><div class="barreVie">
+                    <div class="border <?php echo ($tourActuel === 'mechant') ? '' : 'tour'; ?> "><div class="barreVie">
                         <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvMechant']/$mechant->getPv_perso())*100)) ?>%;"></div>
                     </div>
                     </div>
