@@ -35,7 +35,7 @@
         }
 
         public function modifyPerso(Perso $newPerso) : bool {
-            $query = "UPDATE Perso SET nom_perso = :nom_perso, type_perso = :type_perso, pv_perso = :pv_perso, atk_perso = :atk_perso, bonus_perso = :bonus_perso WHERE id_perso = :id_perso";
+            $query = "UPDATE Perso SET nom_perso = :nom_perso, type_perso = :type_perso, pv_perso = :pv_perso, atk_perso = :atk_perso, bonus_perso = :bonus_perso, img_perso = :img_perso WHERE id_perso = :id_perso";
             $result = $this->db->prepare($query);
     
             $result->bindValue(':nom_perso', $newPerso->getNom_perso(), PDO::PARAM_STR);
@@ -43,6 +43,7 @@
             $result->bindValue(':pv_perso', $newPerso->getPV_perso(), PDO::PARAM_INT);
             $result->bindValue(':atk_perso', $newPerso->getATK_perso(), PDO::PARAM_INT);
             $result->bindValue(':bonus_perso', $newPerso->getBonus_perso(), PDO::PARAM_INT);
+            $result->bindValue(':img_perso', $newPerso->getImg_perso(), PDO::PARAM_STR);
             $result->bindValue(':id_perso', $newPerso->getId_perso(), PDO::PARAM_INT);
     
             return $result->execute();

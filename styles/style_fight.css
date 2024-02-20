@@ -23,12 +23,12 @@ h1 {
     color: #000;
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 h1 span {
     font-size: 4rem;
-    color: #530475;
+    color: #692984;
 }
 
 .fight {
@@ -49,6 +49,8 @@ h2 {
     -webkit-text-stroke: #f4f4f4 0.25px;
     color: #000;
     font-size: 2rem;
+    margin-bottom: 15px;
+    margin-top: 8%;
 }
 
 .mechant h2, .mechant p {
@@ -64,26 +66,63 @@ p {
 }
 
 img {
-    width: 65%;
-    margin-top: 10%;
+    width: 50vh;
+    margin-top: 9%;
 }
 
-.mechant img {
-    margin-left: 17%;
+.mechant img, .mechant .border {
+   float: right;
 }
 
 .barreVie {
     background-color: #ccc;
     height: 20px;
-    margin-bottom: 10px;
     position: relative;
+    border-radius: 5px;
+    border: 2.5px solid #000;
+}
+
+.border {
+    border: #fff 1.5px solid;
+    border-radius: 6px;
+    width: 400px;
 }
 
 .vie {
-height: 100%;
-background-color: green;
+    height: 100%;
+    background-color: #43a181;
 }
 
 .tour {
-    border: 2px solid red; /
+    border: 1.5px solid red;
+    border-radius: 6px;
+}
+
+#result {
+    font-size: 1.4rem;
+    text-align: center;
+    -webkit-text-stroke: #f4f4f4 1px;
+    color: #000;
+}
+
+/* ---- Boutons ---- */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+
+}
+
+.buttons input[type="submit"] {
+    font-family: 'go3v2';
+    font-size: 1.4rem;
+    padding: 7px 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: #9354af;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
