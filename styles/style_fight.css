@@ -19,7 +19,7 @@ body {
 
 h1 {
     font-family: 'go3v2';
-    -webkit-text-stroke: #f4f4f4 0.25px;
+    -webkit-text-stroke: #ffffff 0.25px;
     color: #000;
     text-align: center;
     font-size: 3rem;
@@ -46,7 +46,7 @@ h1 span {
 
 h2 {
     font-family: 'go3v2';
-    -webkit-text-stroke: #f4f4f4 0.25px;
+    -webkit-text-stroke: #fff 0.25px;
     color: #000;
     font-size: 2rem;
     margin-bottom: 15px;
