@@ -58,6 +58,11 @@ select {
     width: 20%;
 }
 
+option {
+    color: black;
+    font-family: sans-serif;
+}
+
 input[type="submit"] {
     font-family: 'go3v2';
     color: #fff;
@@ -71,7 +76,7 @@ input[type="submit"] {
 }
 
 
-/* ---- Section "footer" ---- */
+/* ---- Section bouton ---- */
 section {
     display: flex;
     justify-content: center;
