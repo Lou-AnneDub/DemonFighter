@@ -83,7 +83,7 @@
                     <div class="border <?php echo ($tourActuel === 'hero') ? '' : 'tour'; ?>"><div class="barreVie">
                         <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvHero']/$hero->getPv_perso())*100)) ?>%;"></div>
                     </div></div>
-                    <img src="img/<?= $hero->getImg_perso() ?>" alt=""> 
+                    <img src="<?= $hero->getImg_perso() ?>" alt=""> 
                 </div>
                 
             <section class="buttons">
@@ -126,7 +126,7 @@
                         <div class="vie" style="width: <?php echo min(100, max(0, ($_SESSION['pvMechant']/$mechant->getPv_perso())*100)) ?>%;"></div>
                     </div>
                     </div>
-                    <img src="img/<?= $mechant->getImg_perso() ?>" alt=""> 
+                    <img src="<?= $mechant->getImg_perso() ?>" alt=""> 
                 </div>
             </section>
 

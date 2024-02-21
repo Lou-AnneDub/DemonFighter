@@ -16,7 +16,7 @@
     <h1><?php echo $gagnant->getNom_perso(); ?> a gagné !</h1>
     
     <div class="details">
-        <img src="img/<?php echo $gagnant->getImg_perso(); ?>" alt="Image du gagnant">
+        <img src="<?php echo $gagnant->getImg_perso(); ?>" alt="Image du gagnant">
     </div>
     <?php
         } else {

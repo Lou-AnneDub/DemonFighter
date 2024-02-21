@@ -12,7 +12,7 @@
 
     <form action="index.php?page=modifyPerso" method="POST" id="edit">
         <div class="img">
-            <img src="./img/<?= $perso->getImg_perso() ?>" alt="">
+            <img src="<?= $perso->getImg_perso() ?>" alt="">
             <label for="img">Image :</label>
             <input type="text" name="img_perso" id="img" value="<?= $perso->getImg_perso() ?>" required>
         </div>

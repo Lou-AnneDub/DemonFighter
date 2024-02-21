@@ -22,7 +22,7 @@
                     if ($value['type_perso'] == "Hero") {
                     ?>
                         <div class="perso">
-                            <img src="img/<?= $value['img_perso'] ?>" alt=""> 
+                            <img src="<?= $value['img_perso'] ?>" alt=""> 
                             <div>
                                 <h3><?php echo $value['nom_perso'] ?></h3>
                                 <p>Points de vie : <?php echo $value['pv_perso'] ?></p>
@@ -51,7 +51,7 @@
                     if ($value['type_perso'] == "Mechant") {
                     ?>
                         <div class="perso">
-                            <img src="img/<?= $value['img_perso'] ?>" alt=""> 
+                            <img src="<?= $value['img_perso'] ?>" alt=""> 
                             <div class="text">
                                 <h3><?php echo $value['nom_perso'] ?></h3>
                                 <p>Points de vie : <?php echo $value['pv_perso'] ?></p>
