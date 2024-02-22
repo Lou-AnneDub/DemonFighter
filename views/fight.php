@@ -14,7 +14,7 @@
         $_SESSION['pvMechant'] = $mechant->getPv_perso();
     }
 
-    // Vérifiez si le formulaire a été soumis
+    // Vérifie si le formulaire a été soumis
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tourCombat'])) {
         if ($_POST['tourCombat'] === 'Attaque') {
             if ($tourActuel === 'hero') {
@@ -49,7 +49,7 @@
         $_SESSION['tourCombat'] = ($tourActuel === 'hero') ? 'mechant' : 'hero';
     }
 
-    // Vérifiez si l'un des personnages a atteint 0 points de vie et définir celui restant comme gagnant
+    // Vérifie si l'un des personnages a atteint 0 points de vie et définir celui restant comme gagnant
     if ($_SESSION['pvHero'] <= 0) {
         $_SESSION['gagnant'] = $mechant;
         header('Location: index.php?page=end');
@@ -100,7 +100,7 @@
                     <input type="submit" name="tourCombat" value="Soigner">
                 </form>
 
-                <!-- Afficher le bouton Bonus seulement si c'est le tour du héros -->
+                <!-- Affiche le bouton Bonus seulement si c'est le tour du héros -->
                 <?php if ($_SESSION['tourCombat'] === 'hero'): ?>
                     <form action="index.php?page=fight" method="post">
                         <input type="hidden" name="hero" value="<?php echo $idHero; ?>">
@@ -108,7 +108,7 @@
                         <input type="submit" name="tourCombat" value="Attaque spéciale">
                     </form>
                 <?php endif; ?>
-                <!-- Afficher le bouton Bonus seulement si c'est le tour du héros et si le hero a moins de 15pv -->
+                <!-- Affiche le bouton Bonus seulement si c'est le tour du héros et si le hero a moins de 15pv -->
                 <?php if ($_SESSION['tourCombat'] === 'hero' && $_SESSION['pvHero'] <= 15): ?>
                     <form action="index.php?page=fight" method="post">
                         <input type="hidden" name="hero" value="<?php echo $idHero; ?>">

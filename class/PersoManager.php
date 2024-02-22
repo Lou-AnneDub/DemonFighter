@@ -27,7 +27,6 @@
             if ($result->execute()) {
                 return true; // Succès
             } else {
-                // Afficher des messages d'erreur pour le débogage
                 echo "Erreur lors de la suppression du personnage. ";
                 print_r($result->errorInfo());
                 return false; // Échec
@@ -64,10 +63,9 @@
             $donnees = $result->fetch(PDO::FETCH_ASSOC);
 
             if ($donnees) {
-                // Utiliser un tableau de données pour construire l'objet Personnage
                 return new Perso($donnees);
             } else {
-                // Gérer le cas où le personnage n'est pas trouvé
+                // Gére le cas où le personnage n'est pas trouvé
                 throw new Exception("Personnage non trouvé avec l'ID : $id");
             }
         }

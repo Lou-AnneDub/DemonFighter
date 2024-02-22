@@ -3,7 +3,7 @@
     include 'init.php';
     session_start();
 
-    // Obtenez le paramètre de page de l'URL
+    // Obtient le paramètre de page de l'URL
     $page = isset($_GET['page']) ? $_GET['page'] : 'start';
 
     switch ($page) {
@@ -36,7 +36,7 @@
             break;
 
         case 'end':
-            // Obtenez le gagnant à partir de la session
+            // Obtient le gagnant à partir de la session
             $gagnant = $_SESSION['gagnant'];
             
             include 'views/end.php';
@@ -76,10 +76,11 @@
             break;
 
         case 'editPerso':
-            // Vérifiez si l'ID est défini dans l'URL
-            if (isset($_GET['id'])) {                    $idToEdit = $_GET['id'];
+            // Vérifie si l'ID est défini dans l'URL
+            if (isset($_GET['id'])) {                    
+                $idToEdit = $_GET['id'];
             
-                // Récupérez les informations du personnage à modifier
+                // Récupére les informations du personnage à modifier
                 $perso = $monManager->getOnePerso($idToEdit);
             
                 include 'views/editPerso.php';

@@ -10,7 +10,7 @@
 <body>
     
     <?php
-        // Vérifiez si la variable $gagnant est définie
+        // Vérifie si la variable $gagnant est définie
         if (isset($gagnant)) {
     ?>
     <h1><?php echo $gagnant->getNom_perso(); ?> a gagné !</h1>
@@ -28,7 +28,7 @@
     <a href="index.php?page=start" class="restart">Nouvelle Partie !</a>
 
     <?php
-        // Réinitialisez la session après la fin du combat
+        // Réinitialise la session après la fin du combat
         session_unset();
         session_destroy();
     ?>
